@@ -17,12 +17,16 @@ function onlyPosts (posts) {
   return posts.filter(({ type }) => type === 'story')
 }
 
+
 export function fetchItem (id) {
   return fetch(`${api}/item/${id}${json}`)
     .then((res) => res.json())
 }
 
-//export fetchComments (ids) {}
+export function fetchComments (ids) {
+  return Promise.all(ids.map(fetchItem))
+    .then((comments) => removeDeleted(onlyComments(removeDead(comments))))
+}
 
 export function fetchMainPosts (type) {
   return fetch(`${api}/${type}stories${json}`)
@@ -38,6 +42,12 @@ export function fetchMainPosts (type) {
     .then((posts) => removeDeleted(onlyPosts(removeDead(posts))))
 }
 
-// export function fetchUser (id) {}
+export function fetchUser (id) {
+  return fetch(`${api}/user/${id}${json}`)
+    .then((res) => res.json())
+}
 
-// export function fetchPosts (ids) {}
+export function fetchPosts (ids) {
+  return Promise.all(ids.map(fetchItem))
+    .then((posts) => removeDeleted(onlyPosts(removeDead(posts))))
+}

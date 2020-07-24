@@ -6,7 +6,7 @@ import Post from './components/Post'
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className='container'>
         <Post />
       </div>
     )
