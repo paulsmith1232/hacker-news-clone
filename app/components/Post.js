@@ -18,13 +18,15 @@ export default class Post extends React.Component {
     }
   }
   componentDidMount() {
-    const  id  = "new"
+    const  id  = "1"
 
     fetchItem(id)
       .then((post) => {
         this.setState({ post, loadingPost: false })
 
+        console.log(post)
         return fetchComments(post.kids || [])
+        
       })
       .then((comments) => this.setState({
         comments,
@@ -48,7 +50,7 @@ export default class Post extends React.Component {
         {loadingPost === true
           ? <Loading text='Fetching post' />
           : <React.Fragment>
-              
+              Word
             </React.Fragment>}
        
       </React.Fragment>

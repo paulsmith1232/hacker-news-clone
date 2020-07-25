@@ -17,7 +17,6 @@ function onlyPosts (posts) {
   return posts.filter(({ type }) => type === 'story')
 }
 
-
 export function fetchItem (id) {
   return fetch(`${api}/item/${id}${json}`)
     .then((res) => res.json())
