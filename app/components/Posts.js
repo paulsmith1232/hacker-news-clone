@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { fetchMainPosts } from '../utils/api'
 import Loading from './Loading'
+import PostList from './PostList'
 
 export default class Posts extends React.Component {
   state = {
@@ -24,7 +25,7 @@ export default class Posts extends React.Component {
       loading: true
     })
 
-    fetchMainPosts('top')
+    fetchMainPosts(this.props.type)
       .then((posts) => this.setState({
         posts,
         loading: false,
@@ -46,12 +47,7 @@ export default class Posts extends React.Component {
       return <p className='center-text error'>{error}</p>
     }
 
-    return (
-      <React.Fragment>
-       <pre>{JSON.stringify(posts, null, 2)}</pre>
-       
-      </React.Fragment>
-    )
+    return <PostList posts={posts}/> 
   }
 }
 
