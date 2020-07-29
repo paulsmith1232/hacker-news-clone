@@ -22,6 +22,31 @@ li {
   padding: 50px;
 }
 
+.btn-clear {
+  border: none;
+  background: transparent;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav li {
+  margin-right: 10px
+}
+
 .post {
   margin: 20px 0;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
