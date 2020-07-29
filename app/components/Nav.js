@@ -13,6 +13,7 @@ export default function Nav () {
           <NavLink 
             to='/'
             exact
+            activeStyle={activeStyle}
             className='nav-link'>
               Top
           </NavLink>
@@ -20,6 +21,7 @@ export default function Nav () {
         <li>
           <NavLink 
             to='/new' 
+            activeStyle={activeStyle}
             className='nav-link'>
               New
           </NavLink>
