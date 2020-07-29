@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import PostMetaInfo from './PostMetaInfo'
+import Title from './Title'
 
 export default function PostList ({ posts }) {
   
@@ -9,7 +10,11 @@ export default function PostList ({ posts }) {
       {posts.map((post) => {
         return (
           <li key={post.id} className='post'>
-            {post.title}
+            <Title 
+              url={post.url}
+              title={post.title}
+              id={post.id}
+            />            
             <PostMetaInfo
               by={post.by}
               time={post.time}

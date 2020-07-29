@@ -1,16 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-
+import { Link } from 'react-router-dom'
 
 export default function PostMetaInfo ({ by, time, id, descendants}){
   return (
     <div>
-      <span>by {by}</span>
+      <span>by <Link to={`/user?id=${by}`}>{by}</Link></span>
       <span>on {time}</span>
       {typeof descendants === 'number' && (
         <span>
-          with {descendants} comments
+          with  <Link to={`/post?id=${id}`}>{descendants}</Link> comments
         </span>
       )}
     </div>

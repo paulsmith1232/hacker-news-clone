@@ -18,7 +18,7 @@ export default class Post extends React.Component {
     }
   }
   componentDidMount() {
-    const  id  = "1"
+    const  { id } = queryString.parse(this.props.location.search)
 
     fetchItem(id)
       .then((post) => {
