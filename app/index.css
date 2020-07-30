@@ -22,6 +22,21 @@ li {
   padding: 50px;
 }
 
+.link {
+  color: rgb(187, 46, 31);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
 .btn-clear {
   border: none;
   background: transparent;
@@ -42,11 +57,41 @@ li {
   margin: 20px 0;
 }
 
-.space-between {
-  justify-content: space-between;
+.card-list {
+  margin: 20px 0;
+  font-size: 20px;
 }
 
-.row {
+.card-list li {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+}
+
+.card-list svg {
+  margin-right: 10px;
+}
+
+.card-list a {
+  font-weight: 500;
+  color: inherit;
+}
+
+.bg-light {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+
+.card {
+  margin: 10px 0;
+  width: 250px;
+  padding: 20px;
+}
+
+.comment {
+  margin: 10px 0;
+  background: rgba(128, 128, 128, 0.1411764705882353);
+  border-radius: 5px;
+  padding: 10px;
+  
 }

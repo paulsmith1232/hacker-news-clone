@@ -22,9 +22,7 @@ export default class Post extends React.Component {
       .then((post) => {
         this.setState({ post, loadingPost: false })
 
-        console.log(post)
-        return fetchComments(post.kids || [])
-        
+        return fetchComments(post.kids || [])        
       })
       .then((comments) => this.setState({
         comments,
