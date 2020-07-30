@@ -1,22 +1,20 @@
 import React from 'react'
 import queryString from 'query-string'
-import PropTypes from 'prop-types'
 import { fetchItem, fetchPosts, fetchComments  } from '../utils/api'
 import Loading from './Loading'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Title from './Title'
+import PostMetaInfo from './PostMetaInfo'
+import Comment from './Comment'
 
 export default class Post extends React.Component {
-  constructor(props) {
-    super(props)
-    
-    this.state = {
-      post: null,
-      loadingPost: true,
-      comments: null,
-      loadingComments: true,
-      error: null
-    }
+  state = {
+    post: null,
+    loadingPost: true,
+    comments: null,
+    loadingComments: true,
+    error: null
   }
+  
   componentDidMount() {
     const  { id } = queryString.parse(this.props.location.search)
 
@@ -50,9 +48,29 @@ export default class Post extends React.Component {
         {loadingPost === true
           ? <Loading text='Fetching post' />
           : <React.Fragment>
-              Word
+              <h1>
+                <Title 
+                  url={post.url}
+                  title={post.title}
+                  id={post.id}
+                />
+              </h1>
+              <PostMetaInfo
+                by={post.by}
+                time={post.time}
+                id={post.id}
+                descendants={post.descendants}
+              />
             </React.Fragment>}
-       
+          {loadingComments === true
+            ? loadingPost === false && <Loading text='Fetching comments' />
+            : <React.Fragment>
+                {this.state.comments.map((comment) => 
+                    <Comment key={comment.id} comment={comment}
+                    />
+                  )}
+              </React.Fragment>
+          }
       </React.Fragment>
     )
   }
