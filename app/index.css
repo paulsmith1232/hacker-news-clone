@@ -57,6 +57,20 @@ li {
   margin: 20px 0;
 }
 
+.meta-info {
+  margin-top: 5px;
+  color: gray;
+}
+
+.meta-info a {
+  color: black;
+}
+
+.meta-info span {
+  margin: 10px 0;
+  margin-right: 6px;
+}
+
 .card-list {
   margin: 20px 0;
   font-size: 20px;

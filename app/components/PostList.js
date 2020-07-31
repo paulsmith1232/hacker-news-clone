@@ -4,6 +4,13 @@ import PostMetaInfo from './PostMetaInfo'
 import Title from './Title'
 
 export default function PostList ({ posts }) {
+  if (posts.length === 0) {
+    return (
+      <p className='center-text'>
+        This user hasn't posted yet
+      </p>
+    )
+  }
   
   return(
     <ul>

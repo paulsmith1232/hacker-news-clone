@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Posts from './components/Posts'
 import Nav from './components/Nav'
 import Loading from './components/Loading'
 
+const Posts = React.lazy(() => import('./components/Posts'))
 const Post = React.lazy(() => import('./components/Post'))
 
 class App extends React.Component {

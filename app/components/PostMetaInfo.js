@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function PostMetaInfo ({ by, time, id, descendants}){
   return (
-    <div>
+    <div className='meta-info'>
       <span>by <Link to={`/user?id=${by}`}>{by}</Link></span>
       <span>on {time}</span>
       {typeof descendants === 'number' && (
