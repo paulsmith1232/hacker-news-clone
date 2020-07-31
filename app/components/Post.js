@@ -1,6 +1,6 @@
 import React from 'react'
 import queryString from 'query-string'
-import { fetchItem, fetchPosts, fetchComments  } from '../utils/api'
+import { fetchItem, fetchComments  } from '../utils/api'
 import Loading from './Loading'
 import Title from './Title'
 import PostMetaInfo from './PostMetaInfo'

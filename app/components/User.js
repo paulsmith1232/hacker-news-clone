@@ -47,7 +47,7 @@ export default class Post extends React.Component {
           : <React.Fragment>
               <h1 className='header'>{user.id}</h1>
               <div className='meta-info'>
-              <span>joined <b>{formatDate(user.created)}</b> karma</span>
+              <span>joined <b>{formatDate(user.created)}</b></span>
               <span>has <b>{user.karma.toLocaleString()}</b> karma</span>                
               </div>
               <p dangerouslySetInnerHTML={{__html: user.about}} />
