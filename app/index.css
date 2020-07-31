@@ -71,26 +71,6 @@ li {
   margin-right: 6px;
 }
 
-.card-list {
-  margin: 20px 0;
-  font-size: 20px;
-}
-
-.card-list li {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-.card-list svg {
-  margin-right: 10px;
-}
-
-.card-list a {
-  font-weight: 500;
-  color: inherit;
-}
-
 .bg-light {
   background: rgba(0, 0, 0, 0.08);
   border-radius: 3px;
